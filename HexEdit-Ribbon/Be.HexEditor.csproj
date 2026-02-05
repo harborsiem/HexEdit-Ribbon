@@ -1,0 +1,98 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>warnings</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>disable</ImplicitUsings>
+	<ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.1.0.0</FileVersion>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AssemblyName>HexEdit</AssemblyName>
+    <SignAssembly>False</SignAssembly>
+    <AssemblyOriginatorKeyFile>Be.HexEditor.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants);Ribbon</DefineConstants>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants);Ribbon</DefineConstants>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <None Remove="CHANGELOG.txt" />
+    <None Remove="Images\Logo.png" />
+    <None Remove="Resources\ThanksTo.rtf" />
+    <None Remove="RibbonItems.de.ribbon" />
+    <None Remove="RibbonItems.h" />
+    <None Remove="RibbonItems.it.ribbon" />
+    <None Remove="RibbonItems.ja.ribbon" />
+    <None Remove="RibbonItems.ribbon" />
+    <None Remove="RibbonItems.ru.ribbon" />
+    <None Remove="RibbonItems.shortcuttable" />
+    <None Remove="RibbonItems.zh-Hans.ribbon" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Include="CHANGELOG.txt">
+      <LogicalName>Be.HexEditor.Resources.CHANGELOG.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\Logo.png" />
+    <EmbeddedResource Include="LICENSE.txt">
+      <LogicalName>Be.HexEditor.Resources.LICENSE.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ThanksTo.rtf" />
+    <EmbeddedResource Include="RibbonItems.de.ribbon" />
+    <EmbeddedResource Include="RibbonItems.h" />
+    <EmbeddedResource Include="RibbonItems.it.ribbon" />
+    <EmbeddedResource Include="RibbonItems.ja.ribbon" />
+    <EmbeddedResource Include="RibbonItems.ribbon" />
+    <EmbeddedResource Include="RibbonItems.ru.ribbon" />
+    <EmbeddedResource Include="RibbonItems.shortcuttable" />
+    <EmbeddedResource Include="RibbonItems.zh-Hans.ribbon" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <!--
+    <PackageReference Include="Be.Windows.Forms.HexBox.Net8" Version="2.1.0" />
+    -->
+    <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.269" PrivateAssets="all" />
+    <PackageReference Include="RibbonFramework.CCW" Version="1.2.1" />
+  </ItemGroup>
+  
+  <!--
+  <ItemGroup>
+    <Reference Include="Be.Windows.Forms.HexBox">
+      <HintPath>..\..\WinForms-HexEdit\Be.Windows.Forms.HexBox\bin\Release\net8.0-windows\Be.Windows.Forms.HexBox.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  -->
+  
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Be.Windows.Forms.HexBox\Be.Windows.Forms.HexBox.csproj" />
+  </ItemGroup>
+
+</Project>

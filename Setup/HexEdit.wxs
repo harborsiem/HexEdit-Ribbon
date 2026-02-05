@@ -1,0 +1,154 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui"
+	 xmlns:netfx="http://wixtoolset.org/schemas/v4/wxs/netfx">
+
+  <Package Name="HexEdit" Language="1033" Version="2.1.0.0" Manufacturer="Harbor" UpgradeCode="{CC6E3ED2-F4CF-4CC8-A9D4-8625FC0F2DD8}" InstallerVersion="301" ProductCode="{2D5ED386-0B6A-46DE-ACC3-3033B7481C19}">
+    <SummaryInformation Description="Ribbon based HexEdit" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <Media Id="1" Cabinet="Data.cab" EmbedCab="yes" />
+
+    <Feature Id="ProductFeature" Title="Ribbon based HexEdit Setup" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+		<ComponentGroupRef Id="ShellRegistry"/>
+		<!--
+        <ComponentGroupRef Id="Runtimes" />
+        -->
+		<ComponentGroupRef Id="LanguageDe" />
+		<ComponentGroupRef Id="LanguageIt" />
+		<ComponentGroupRef Id="LanguageJa" />
+		<ComponentGroupRef Id="LanguageRu" />
+		<ComponentGroupRef Id="LanguageZh_Hans" />
+		<ComponentGroupRef Id="ProductComponents2" />
+    </Feature>
+    <UI />
+    <netfx:DotNetCompatibilityCheck
+      Property="DOTNETRUNTIMECHECK"
+      RollForward="major"
+      RuntimeType="desktop"
+	  Platform="x64"
+      Version="8.0.0"
+  />
+ 
+    <ui:WixUI Id="WixUI_Minimal" />
+    <UIRef Id="WixUI_ErrorProgressText" />
+    <Icon Id="MainIcon.ico" SourceFile="App.ico" />
+    <Property Id="ARPPRODUCTICON" Value="MainIcon.ico" />
+    <Property Id="ARPHELPLINK" Value="https://github.com/harborsiem/HexEdit-Ribbon" />
+    <Property Id="ARPCOMMENTS" Value="HexEditor" />
+    <Property Id="ARPURLUPDATEINFO" Value="https://github.com/harborsiem/HexEdit-Ribbon/releases" />
+    <Property Id="ARPNOREPAIR" Value="yes" />
+    <WixVariable Id="WixUILicenseRtf" Value="MIT_License.rtf" />
+  </Package>
+
+  <Fragment>
+      <StandardDirectory Id="ProgramFiles64Folder">
+        <Directory Id="Di.INSTALLFOLDER" Name="HexEdit">
+			<!--
+            <Directory Id="Di.RuntimeFolder" Name="runtimes\win\lib\net8.0">
+			</Directory>
+            -->
+			<Directory Id="Di.LanguageDe" Name="de"></Directory>
+			<Directory Id="Di.LanguageIt" Name="it"></Directory>
+			<Directory Id="Di.LanguageJa" Name="ja"></Directory>
+			<Directory Id="Di.LanguageRu" Name="ru"></Directory>
+			<Directory Id="Di.LanguageZh_Hans" Name="zh-Hans"></Directory>
+		</Directory>
+      </StandardDirectory>
+      <StandardDirectory Id="ProgramMenuFolder">
+      </StandardDirectory>
+    </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="Di.INSTALLFOLDER">
+      <Component Id="C.HexEditorBin" Guid="D0AB8E49-9794-429B-888B-C591AF0B1E84">
+        <Environment Id="PATH" Name="Path" Value="[Di.INSTALLFOLDER]" Permanent="no" Part="last" Action="set" System="yes" />
+        <File Id="Fi.HexEditorExe" Name="HexEdit.exe" Source="..\HexEdit-Ribbon\bin\Release\net8.0-windows\HexEdit.exe" KeyPath="yes" />
+		<File Id="Fi.HexEditorDll" Name="HexEdit.dll" Source="..\HexEdit-Ribbon\bin\Release\net8.0-windows\HexEdit.dll" Checksum="yes" />
+		<File Id="Fi.HexEditorConfig" Name="HexEdit.dll.config" Source="..\HexEdit-Ribbon\bin\Release\net8.0-windows\HexEdit.dll.config" Checksum="yes" />
+		  <File Id="Fi.HexBoxDll" Name="Be.Windows.Forms.HexBox.dll" Source="..\HexEdit-Ribbon\bin\Release\net8.0-windows\Be.Windows.Forms.HexBox.dll" Checksum="yes" />
+		  <File Id="Fi.RibbonDll" Name="RibbonFramework.dll" Source="..\HexEdit-Ribbon\bin\Release\net8.0-windows\RibbonFramework.dll" Checksum="yes" />
+		  <File Id="Fi.HexEditorDeps" Name="HexEdit.deps.json" Source="..\HexEdit-Ribbon\bin\Release\net8.0-windows\HexEdit.deps.json" Checksum="yes" />
+		  <File Id="Fi.HexEditorRuntimeconfig" Name="HexEdit.runtimeconfig.json" Source="..\HexEdit-Ribbon\bin\Release\net8.0-windows\HexEdit.runtimeconfig.json" Checksum="yes" />
+		  <!--
+          <File Id="Fi.CodePages" Name="System.Text.Encoding.CodePages.dll" Source="..\HexEdit-Ribbon\bin\Release\net8.0-windows\System.Text.Encoding.CodePages.dll" Checksum="yes" />
+          -->
+	  </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents2" Directory="ProgramMenuFolder">
+      <Component Id="C.AppMenu" Guid="31676EDB-CA37-42F6-B415-179E5D7EC393">
+        <Shortcut Id="ApplicationStartMenuShortcut" Name="HexEdit" Target="[!Fi.HexEditorExe]" WorkingDirectory="Di.INSTALLFOLDER" Icon="MainIcon.ico" IconIndex="0" />
+        <RegistryValue Root="HKCU" Key="Software\[Manufacturer]\[ProductName]" Value="1" Type="integer" KeyPath="yes" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ShellRegistry">
+			<Component Id="C.Shell">
+				<RegistryKey Root="HKCR" Key="*\shell\HexEdit64" ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes" >
+					<RegistryValue Value="Open with HexEdit" Type="string">
+					</RegistryValue>
+					<RegistryValue Name="Icon" Value="&quot;[Di.INSTALLFOLDER]HexEdit.exe&quot;" Type="string">
+					</RegistryValue>
+					<RegistryKey Key="Command">
+						<RegistryValue Value="&quot;[Di.INSTALLFOLDER]HexEdit.exe&quot; &quot;%1&quot;" Type="string"></RegistryValue>
+					</RegistryKey>
+				</RegistryKey>
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+	
+	<!--
+    <Fragment>
+		<ComponentGroup Id="Runtimes" Directory="Di.RuntimeFolder">
+			<Component Id="C.Runtimes">
+				<File Id="Fi.RuntimeCodePages" Name="System.Text.Encoding.CodePages.dll" Source="..\HexEdit-Ribbon\bin\Release\net8.0-windows\runtimes\win\lib\net8.0\System.Text.Encoding.CodePages.dll" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+    -->
+
+	<Fragment>
+		<ComponentGroup Id="LanguageDe" Directory="Di.LanguageDe">
+			<Component Id="C.LanguageDe">
+				<File Id="Fi.LanguageDe" Name="HexEdit.resources.dll" Source="..\HexEdit-Ribbon\bin\Release\net8.0-windows\de\HexEdit.resources.dll" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="LanguageIt" Directory="Di.LanguageIt">
+			<Component Id="C.LanguageIt">
+				<File Id="Fi.LanguageIt" Name="HexEdit.resources.dll" Source="..\HexEdit-Ribbon\bin\Release\net8.0-windows\it\HexEdit.resources.dll" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="LanguageJa" Directory="Di.LanguageJa">
+			<Component Id="C.LanguageJa">
+				<File Id="Fi.LanguageJa" Name="HexEdit.resources.dll" Source="..\HexEdit-Ribbon\bin\Release\net8.0-windows\ja\HexEdit.resources.dll" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="LanguageRu" Directory="Di.LanguageRu">
+			<Component Id="C.LanguageRu">
+				<File Id="Fi.LanguageRu" Name="HexEdit.resources.dll" Source="..\HexEdit-Ribbon\bin\Release\net8.0-windows\ru\HexEdit.resources.dll" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="LanguageZh_Hans" Directory="Di.LanguageZh_Hans">
+			<Component Id="C.LanguageZh_Hans">
+				<File Id="Fi.LanguageZh_Hans" Name="HexEdit.resources.dll" Source="..\HexEdit-Ribbon\bin\Release\net8.0-windows\zh-Hans\HexEdit.resources.dll" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>

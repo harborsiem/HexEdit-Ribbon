@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://schemas.microsoft.com/windows/2009/Ribbon">
+  <Application.Commands>
+    <Command Name="Open" Id="1001" LabelTitle="{Resource:Open_LabelTitle}" TooltipTitle="{Resource:Open_TooltipTitle}" TooltipDescription="{Resource:Open_TooltipDescription}" Keytip="{Resource:Open_Keytip}">
+      <Command.SmallImages>
+        <Image>Images/16/openHS.bmp</Image>
+      </Command.SmallImages>
+      <Command.LargeImages>
+        <Image>Images/32/OpenHH.bmp</Image>
+      </Command.LargeImages>
+    </Command>
+    <Command Name="Save" Id="1002" LabelTitle="{Resource:Save_LabelTitle}" TooltipTitle="{Resource:Save_TooltipTitle}" TooltipDescription="{Resource:Save_TooltipDescription}" Keytip="{Resource:Save_Keytip}">
+      <Command.SmallImages>
+        <Image>Images/16/SaveHS.bmp</Image>
+      </Command.SmallImages>
+      <Command.LargeImages>
+        <Image>Images/32/SaveHH.bmp</Image>
+      </Command.LargeImages>
+    </Command>
+    <Command Name="RecentItems" Id="1003" LabelTitle="{Resource:RecentItems_LabelTitle}" />
+    <Command Name="About" Id="2001" LabelTitle="{Resource:About_LabelTitle}" Keytip="{Resource:About_Keytip}">
+      <Command.LargeImages>
+        <Image>Images/32/Information32.bmp</Image>
+      </Command.LargeImages>
+    </Command>
+    <Command Name="Options" Id="2002" LabelTitle="{Resource:Options_LabelTitle}" Keytip="{Resource:Options_Keytip}">
+      <Command.SmallImages>
+        <Image>Images/16/OptionsHS.bmp</Image>
+      </Command.SmallImages>
+    </Command>
+    <Command Name="Exit" Id="2003" LabelTitle="{Resource:Exit_LabelTitle}" Keytip="{Resource:Exit_Keytip}">
+      <Command.SmallImages>
+        <Image>Images/16/ClosePreviewHS.bmp</Image>
+      </Command.SmallImages>
+      <Command.LargeImages>
+        <Image>Images/32/ClosePreviewHH.bmp</Image>
+      </Command.LargeImages>
+    </Command>
+    <Command Name="Cut" Id="3001" LabelTitle="{Resource:Cut_LabelTitle}" TooltipTitle="{Resource:Cut_TooltipTitle}" TooltipDescription="{Resource:Cut_TooltipDescription}" Keytip="{Resource:Cut_Keytip}">
+      <Command.SmallImages>
+        <Image>Images/16/CutHS.bmp</Image>
+      </Command.SmallImages>
+    </Command>
+    <Command Name="PasteSplit" Id="3012" LabelTitle="{Resource:Paste_LabelTitle}" TooltipTitle="{Resource:Paste_TooltipTitle}" TooltipDescription="{Resource:Paste_TooltipDescription}" Keytip="{Resource:Paste_Keytip}">
+      <Command.SmallImages>
+        <Image>Images/16/PasteHS.bmp</Image>
+      </Command.SmallImages>
+      <Command.LargeImages>
+        <Image>Images/32/PasteHH.bmp</Image>
+      </Command.LargeImages>
+    </Command>
+    <Command Name="Paste" Id="3002" LabelTitle="{Resource:Paste_LabelTitle}" TooltipTitle="{Resource:Paste_TooltipTitle}" TooltipDescription="{Resource:Paste_TooltipDescription}" Keytip="{Resource:Paste_Keytip}">
+      <Command.SmallImages>
+        <Image>Images/16/PasteHS.bmp</Image>
+      </Command.SmallImages>
+      <Command.LargeImages>
+        <Image>Images/32/PasteHH.bmp</Image>
+      </Command.LargeImages>
+    </Command>
+    <Command Name="Copy" Id="3003" LabelTitle="{Resource:Copy_LabelTitle}" TooltipTitle="{Resource:Copy_TooltipTitle}" TooltipDescription="{Resource:Copy_TooltipDescription}" Keytip="{Resource:Copy_Keytip}">
+      <Command.SmallImages>
+        <Image>Images/16/CopyHS.bmp</Image>
+      </Command.SmallImages>
+    </Command>
+    <Command Name="CopyHex" Id="3004" LabelTitle="{Resource:CopyHex_LabelTitle}" TooltipTitle="{Resource:CopyHex_TooltipTitle}" TooltipDescription="{Resource:CopyHex_TooltipDescription}" Keytip="{Resource:CopyHex_Keytip}">
+      <Command.SmallImages>
+        <Image>Images/16/CopyHS.bmp</Image>
+      </Command.SmallImages>
+    </Command>
+    <Command Name="PasteHex" Id="3005" LabelTitle="{Resource:PasteHex_LabelTitle}" TooltipTitle="{Resource:PasteHex_TooltipTitle}" TooltipDescription="{Resource:PasteHex_TooltipDescription}">
+      <Command.SmallImages>
+        <Image>Images/16/PasteHS.bmp</Image>
+      </Command.SmallImages>
+    </Command>
+    <Command Name="Find" Id="4001" LabelTitle="{Resource:Find_LabelTitle}" TooltipTitle="{Resource:Find_TooltipTitle}" TooltipDescription="{Resource:Find_TooltipDescription}" Keytip="{Resource:Find_Keytip}">
+      <Command.SmallImages>
+        <Image>Images/16/Find.bmp</Image>
+      </Command.SmallImages>
+      <Command.LargeImages>
+        <Image>Images/32/FindHH.bmp</Image>
+      </Command.LargeImages>
+    </Command>
+    <Command Name="FindNext" Id="4002" LabelTitle="{Resource:FindNext_LabelTitle}" TooltipTitle="{Resource:FindNext_TooltipTitle}" TooltipDescription="{Resource:FindNext_TooltipDescription}" Keytip="{Resource:FindNext_Keytip}">
+      <Command.SmallImages>
+        <Image>Images/16/FindNext.bmp</Image>
+      </Command.SmallImages>
+    </Command>
+    <Command Name="GoTo" Id="4003" LabelTitle="{Resource:GoTo_LabelTitle}" TooltipTitle="{Resource:GoTo_TooltipTitle}" TooltipDescription="{Resource:GoTo_TooltipDescription}" Keytip="{Resource:GoTo_Keytip}">
+      <Command.SmallImages>
+        <Image>Images/16/GoToNextHS.bmp</Image>
+      </Command.SmallImages>
+    </Command>
+    <Command Name="SelectAll" Id="4004" LabelTitle="{Resource:SelectAll_LabelTitle}" TooltipTitle="{Resource:SelectAll_TooltipTitle}" TooltipDescription="{Resource:SelectAll_TooltipDescription}" Keytip="{Resource:SelectAll_Keytip}" />
+    <Command Name="Home" LabelTitle="{Resource:Home_LabelTitle}" Keytip="{Resource:Home_Keytip}" />
+    <Command Name="General" LabelTitle="{Resource:General_LabelTitle}" />
+    <Command Name="Clipboard" LabelTitle="{Resource:Clipboard_LabelTitle}" />
+    <Command Name="Editing" LabelTitle="{Resource:Editing_LabelTitle}" />
+    <Command Name="Encoding" Id="22" LabelTitle="{Resource:Encoding_LabelTitle}" />
+    <Command Name="Views" Id="23" LabelTitle="{Resource:Views_LabelTitle}" />
+    <Command Name="Bits" Id="24" LabelTitle="{Resource:Bits_LabelTitle}" />
+    <Command Name="Qat" Id="25" />
+    <Command Name="Application" Id="26" TooltipTitle="{Resource:Application_TooltipTitle}" TooltipDescription="{Resource:Application_TooltipDescription}" />
+    <Command Name="ContextMenus" Id="27" />
+    <Command Name="SelectAllContext" Id="28" LabelTitle="{Resource:SelectAll_LabelTitle}" TooltipTitle="{Resource:SelectAll_TooltipTitle}" TooltipDescription="{Resource:SelectAll_TooltipDescription}" Keytip="{Resource:SelectAll_Keytip}" />
+    <Command Name="CutContext" Id="29" LabelTitle="{Resource:Cut_LabelTitle}" TooltipTitle="{Resource:Cut_TooltipTitle}" TooltipDescription="{Resource:Cut_TooltipDescription}" Keytip="{Resource:Cut_Keytip}">
+      <Command.SmallImages>
+        <Image>Images/16/CutHS.bmp</Image>
+      </Command.SmallImages>
+    </Command>
+    <Command Name="CopyContext" Id="30" LabelTitle="{Resource:Copy_LabelTitle}" TooltipTitle="{Resource:Copy_TooltipTitle}" TooltipDescription="{Resource:Copy_TooltipDescription}" Keytip="{Resource:Copy_Keytip}">
+      <Command.SmallImages>
+        <Image>Images/16/CopyHS.bmp</Image>
+      </Command.SmallImages>
+    </Command>
+    <Command Name="PasteContext" Id="31" LabelTitle="{Resource:Paste_LabelTitle}" TooltipTitle="{Resource:Paste_TooltipTitle}" TooltipDescription="{Resource:Paste_TooltipDescription}" Keytip="{Resource:Paste_Keytip}">
+      <Command.SmallImages>
+        <Image>Images/16/PasteHS.bmp</Image>
+      </Command.SmallImages>
+    </Command>
+    <Command Name="FindPrevious" Id="32" LabelTitle="{Resource:FindPrevious_LabelTitle}" TooltipTitle="{Resource:FindPrevious_TooltipTitle}" TooltipDescription="{Resource:FindPrevious_TooltipDescription}">
+      <Command.SmallImages>
+        <Image>Images/16/FindPrevious.bmp</Image>
+      </Command.SmallImages>
+    </Command>
+    <Command Name="Help" Id="33" />
+  </Application.Commands>
+  <Application.Views>
+    <Ribbon>
+      <Ribbon.ApplicationMenu>
+        <ApplicationMenu CommandName="Application">
+          <ApplicationMenu.RecentItems>
+            <RecentItems CommandName="RecentItems" MaxCount="20" EnablePinning="false" />
+          </ApplicationMenu.RecentItems>
+          <MenuGroup Class="StandardItems">
+            <Button CommandName="Open" />
+            <Button CommandName="Save" />
+          </MenuGroup>
+          <MenuGroup Class="StandardItems">
+            <Button CommandName="Options" />
+            <Button CommandName="About" />
+            <Button CommandName="Exit" />
+          </MenuGroup>
+        </ApplicationMenu>
+      </Ribbon.ApplicationMenu>
+      <Ribbon.HelpButton>
+        <HelpButton CommandName="Help" />
+      </Ribbon.HelpButton>
+      <Ribbon.QuickAccessToolbar>
+        <QuickAccessToolbar CommandName="Qat">
+          <QuickAccessToolbar.ApplicationDefaults>
+            <Button CommandName="Open" ApplicationDefaults.IsChecked="true" />
+            <Button CommandName="Save" ApplicationDefaults.IsChecked="true" />
+          </QuickAccessToolbar.ApplicationDefaults>
+        </QuickAccessToolbar>
+      </Ribbon.QuickAccessToolbar>
+      <Ribbon.Tabs>
+        <Tab CommandName="Home">
+          <Tab.ScalingPolicy>
+            <ScalingPolicy>
+              <ScalingPolicy.IdealSizes>
+                <Scale Group="Clipboard" Size="Medium" />
+                <Scale Group="Editing" Size="Large" />
+              </ScalingPolicy.IdealSizes>
+              <Scale Group="Clipboard" Size="Small" />
+              <Scale Group="Views" Size="Large" />
+            </ScalingPolicy>
+          </Tab.ScalingPolicy>
+          <Group CommandName="Clipboard" SizeDefinition="FourButtons">
+            <SplitButton CommandName="PasteSplit">
+              <SplitButton.ButtonItem>
+                <Button CommandName="Paste" />
+              </SplitButton.ButtonItem>
+              <Button CommandName="Paste" />
+              <Button CommandName="PasteHex" />
+            </SplitButton>
+            <Button CommandName="Cut" />
+            <Button CommandName="Copy" />
+            <Button CommandName="CopyHex" />
+          </Group>
+          <Group CommandName="Editing">
+            <SizeDefinition>
+              <GroupSizeDefinition Size="Large">
+                <ControlSizeDefinition ImageSize="Large" />
+                <ControlSizeDefinition />
+                <ControlSizeDefinition />
+                <ControlSizeDefinition />
+                <ColumnBreak />
+                <ControlSizeDefinition IsImageVisible="false" />
+              </GroupSizeDefinition>
+            </SizeDefinition>
+            <Button CommandName="Find" />
+            <Button CommandName="FindNext" />
+            <Button CommandName="FindPrevious" />
+            <Button CommandName="GoTo" />
+            <Button CommandName="SelectAll" />
+          </Group>
+          <Group CommandName="Views">
+            <SizeDefinition>
+              <GroupSizeDefinition Size="Large">
+                <ControlSizeDefinition IsImageVisible="false" />
+                <ControlSizeDefinition IsImageVisible="false" />
+              </GroupSizeDefinition>
+            </SizeDefinition>
+            <ComboBox CommandName="Encoding" IsEditable="false" />
+            <CheckBox CommandName="Bits" />
+          </Group>
+        </Tab>
+      </Ribbon.Tabs>
+    </Ribbon>
+    <ContextPopup>
+      <ContextPopup.ContextMenus>
+        <ContextMenu Name="Context">
+          <MenuGroup>
+            <Button CommandName="CutContext" />
+            <Button CommandName="CopyContext" />
+            <Button CommandName="PasteContext" />
+          </MenuGroup>
+          <MenuGroup>
+            <Button CommandName="SelectAllContext" />
+          </MenuGroup>
+        </ContextMenu>
+      </ContextPopup.ContextMenus>
+      <ContextPopup.ContextMaps>
+        <ContextMap CommandName="ContextMenus" ContextMenu="Context" />
+      </ContextPopup.ContextMaps>
+    </ContextPopup>
+  </Application.Views>
+</Application>
+<!--ResourceName Value="APPLICATION"-->

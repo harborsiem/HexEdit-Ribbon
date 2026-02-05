@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RibbonShortcutTable>
+  <RibbonShortcutArray>
+    <RibbonShortcut CommandId="1001" Shortcut="Ctrl+O"/>
+    <RibbonShortcut CommandId="1002" Shortcut="Ctrl+S"/>
+    <RibbonShortcut CommandId="2003" Shortcut="Alt+F4"/>
+    <RibbonShortcut CommandId="4001" Shortcut="Ctrl+F"/>
+    <RibbonShortcut CommandId="4002" Shortcut="F3"/>
+    <RibbonShortcut CommandId="4003" Shortcut="Ctrl+G"/>
+    <RibbonShortcut CommandId="4004" Shortcut="Ctrl+A"/>
+  </RibbonShortcutArray>  
+</RibbonShortcutTable>
