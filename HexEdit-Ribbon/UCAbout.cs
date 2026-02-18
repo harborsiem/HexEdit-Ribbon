@@ -75,7 +75,9 @@ namespace Be.HexEditor
         {
             try
             {
-                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(lnkWorkspace.Text));
+                ProcessStartInfo processStartInfo = new ProcessStartInfo(lnkWorkspace.Text);
+                processStartInfo.UseShellExecute = true;
+                System.Diagnostics.Process.Start(processStartInfo);
             }
             catch (Exception ex1)
             {
