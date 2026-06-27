@@ -216,24 +216,28 @@ namespace Be.HexEditor
                     dynamicFileByteProvider.Changed += new EventHandler(byteProvider_Changed);
                     dynamicFileByteProvider.LengthChanged += new EventHandler(byteProvider_LengthChanged);
                 }
-                catch (IOException) // write mode failed
+                catch (Exception e) // write mode failed
                 {
-                    try
+                    if (e is IOException || e is UnauthorizedAccessException)
                     {
-                        // try to open in read-only mode
-                        dynamicFileByteProvider = new DynamicFileByteProvider(fileName, true);
-                        if (Program.ShowQuestion(ResStrings.OpenReadonly) == DialogResult.No)
+                        try
                         {
-                            dynamicFileByteProvider.Dispose();
+                            // try to open in read-only mode
+                            dynamicFileByteProvider = new DynamicFileByteProvider(fileName, true);
+                            if (Program.ShowQuestion(ResStrings.OpenReadonly) == DialogResult.No)
+                            {
+                                dynamicFileByteProvider.Dispose();
+                                return;
+                            }
+                        }
+                        catch (IOException) // read-only also failed
+                        {
+                            // file cannot be opened
+                            Program.ShowError(ResStrings.OpenFailed);
                             return;
                         }
                     }
-                    catch (IOException) // read-only also failed
-                    {
-                        // file cannot be opened
-                        Program.ShowError(ResStrings.OpenFailed);
-                        return;
-                    }
+                    else throw;
                 }
 
                 hexBox.ByteProvider = dynamicFileByteProvider;

@@ -383,7 +383,9 @@ namespace Be.HexEditor.Core
             uint dpiX = 0;
             uint dpiY = 0;
 
+#pragma warning disable CA1416
             HRESULT result = PInvoke.GetDpiForMonitor(handleMonitor, MONITOR_DPI_TYPE.MDT_DEFAULT, out dpiX, out dpiY);
+#pragma warning restore CA1416
 
             if (result.Failed) // If not S_OK (= 0)
             {
