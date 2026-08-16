@@ -1,6 +1,10 @@
 Version history
 
 2.1.0
+- Some language translations missing (Todo, need help)
+- MSI-Setup with Wix Toolset 3.14
+
+2.1.0
 - Font for HexBox and BitControl is set to Consolas, 10pt
 - Native Resources for Pens, Brushes are now disposed as soon as possible
 - Some internal improvements

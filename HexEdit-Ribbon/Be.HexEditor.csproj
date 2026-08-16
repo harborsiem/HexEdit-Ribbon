@@ -12,7 +12,7 @@
   
   <PropertyGroup>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
-    <FileVersion>2.1.0.0</FileVersion>
+    <FileVersion>2.1.1.0</FileVersion>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AssemblyName>HexEdit</AssemblyName>
     <SignAssembly>False</SignAssembly>
